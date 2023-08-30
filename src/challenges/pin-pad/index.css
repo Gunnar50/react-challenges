@@ -1,0 +1,45 @@
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(63, 62, 62);
+	color: white;
+}
+
+.main-container {
+	display: flex;
+	justify-content: center;
+	width: 400px;
+}
+
+.passcode {
+	font-size: large;
+	text-align: center;
+}
+
+.pin-pad {
+	margin-top: 20px;
+	display: block;
+	width: 240px;
+	text-align: center;
+}
+
+.pin {
+	border: white solid;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	margin: 5px;
+	color: white;
+	font-size: 30px;
+	background-color: transparent;
+}
+
+.pin:hover {
+	background-color: rgba(158, 158, 158, 0.24);
+	cursor: pointer;
+}
+
+
