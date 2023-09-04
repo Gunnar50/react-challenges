@@ -1,5 +1,5 @@
 
-import { FC, default as React, useState } from "react";
+import { default as React, useState } from "react";
 import "./index.css";
 
 const PASSCODE = [1, 2, 3, 4];
@@ -25,7 +25,7 @@ function PinPadComponent() {
 				setIsLoggedIn(true);
 				setUserPasscode([]);
 			}, 1000);
-		} else setUserPasscode([]);
+		} else setTimeout(() => {setUserPasscode([]), 500});
 	}
 
 	function handleLogout(e: React.MouseEvent<HTMLButtonElement>) {
@@ -38,7 +38,7 @@ function PinPadComponent() {
 			<div className="main-container">
 				<form style={{textAlign: "center"}}>
 					<h1>Enter Passcode</h1>
-					<input type="text" className="passcode" readOnly value={userPasscode.join("")}/>
+					<input type="password" className="text-black text-center text-xl" readOnly value={userPasscode.join("")}/>
 	
 					<div className="pin-pad">
 						{[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((pin, i) => (
@@ -52,14 +52,18 @@ function PinPadComponent() {
 	
 	function LoggedIn() {
 		return (
-			<div>
-				<h1>You are logged in</h1>
-				<button onClick={(e) => handleLogout(e)}>Logout</button>
+			<div className="text-center">
+				<h1 className="font-bold text-lg">You are logged in</h1>
+				<button onClick={(e) => handleLogout(e)} className="py-2 px-4 border-2 mt-5">Logout</button>
 			</div>
 		)
 	}
 
-	return isLoggedIn ? <LoggedIn/> : <PinPad/>
+	return (
+		<div className=" flex justify-center border-2 p-10 w-80 h-[460px]">
+			{isLoggedIn ? <LoggedIn/> : <PinPad/>}
+		</div>
+	);
 }
 
 
